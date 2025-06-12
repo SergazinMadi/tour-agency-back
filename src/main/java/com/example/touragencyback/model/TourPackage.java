@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.print.attribute.standard.Destination;
 import java.awt.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -41,11 +40,7 @@ public class TourPackage {
     @OneToMany(mappedBy = "tourPackage")
     private List<Review> reviews;
 
-    @ManyToMany
-    @JoinTable(
-            name = "tour_package_images",
-            joinColumns = @JoinColumn(name = "tour_package_id"),
-            inverseJoinColumns = @JoinColumn(name = "image_id")
-    )
-    private List<Image> images;
+    @OneToMany(mappedBy = "tourPackage")
+    private List<TourPackageImage> tourPackageImages;
+
 }

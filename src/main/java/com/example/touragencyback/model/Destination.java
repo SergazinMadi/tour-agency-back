@@ -27,12 +27,6 @@ public class Destination {
     @OneToMany(mappedBy = "destination")
     private List<TourPackage> tourPackages;
 
-    @ManyToMany
-    @JoinTable(
-            name = "destination_images",
-            joinColumns = @JoinColumn(name = "destination_id"),
-            inverseJoinColumns = @JoinColumn(name = "image_id")
-
-    )
-    private List<Image> images;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "destination", orphanRemoval = true)
+    private List<DestinationImage> destinationImages;
 }
