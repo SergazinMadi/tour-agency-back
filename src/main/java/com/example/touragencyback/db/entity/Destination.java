@@ -1,12 +1,9 @@
-package com.example.touragencyback.model;
+package com.example.touragencyback.db.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-
-import java.util.List;
 
 @Entity
 @Getter
@@ -24,9 +21,4 @@ public class Destination {
     @JoinColumn(name = "country_id")
     private Country country;
 
-    @OneToMany(mappedBy = "destination")
-    private List<TourPackage> tourPackages;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "destination", orphanRemoval = true)
-    private List<DestinationImage> destinationImages;
 }

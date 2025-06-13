@@ -1,4 +1,4 @@
-package com.example.touragencyback.model;
+package com.example.touragencyback.db.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,7 +20,7 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate bookingDate;
-    private int numberOfPeople;
+    private Integer numberOfPeople;
     private BigDecimal totalPrice;
     private String status;
 

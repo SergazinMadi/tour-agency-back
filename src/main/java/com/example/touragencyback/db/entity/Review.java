@@ -1,4 +1,4 @@
-package com.example.touragencyback.model;
+package com.example.touragencyback.db.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int rating;
+    private Integer rating;
     private String comment;
     private LocalDateTime createdAt;
 

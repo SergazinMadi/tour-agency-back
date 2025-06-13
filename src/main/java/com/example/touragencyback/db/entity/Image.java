@@ -1,12 +1,10 @@
-package com.example.touragencyback.model;
+package com.example.touragencyback.db.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Entity
 @Getter
@@ -18,11 +16,4 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String url;
-
-    @ManyToMany(mappedBy = "images")
-    private List<Destination> destinations;
-
-    @ManyToMany(mappedBy = "images")
-    private List<TourPackage> tourPackages;
-
 }

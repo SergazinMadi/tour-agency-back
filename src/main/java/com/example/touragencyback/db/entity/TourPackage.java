@@ -1,14 +1,12 @@
-package com.example.touragencyback.model;
+package com.example.touragencyback.db.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.awt.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Getter
@@ -25,22 +23,15 @@ public class TourPackage {
     private LocalDate endDate;
     private BigDecimal price;
     private String currency;
-    private int availableSeats;
+    private Integer availableSeats;
     private String packageType;
     private String features;
-    private boolean archived;
+    private Boolean archived;
 
     @ManyToOne
     @JoinColumn(name = "destination_id")
     private Destination destination;
 
-    @OneToMany(mappedBy = "tourPackage")
-    private List<Booking> bookings;
 
-    @OneToMany(mappedBy = "tourPackage")
-    private List<Review> reviews;
-
-    @OneToMany(mappedBy = "tourPackage")
-    private List<TourPackageImage> tourPackageImages;
 
 }
