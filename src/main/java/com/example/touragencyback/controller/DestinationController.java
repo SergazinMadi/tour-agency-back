@@ -1,6 +1,5 @@
 package com.example.touragencyback.controller;
 
-import com.example.touragencyback.db.repository.DestinationRepository;
 import com.example.touragencyback.dto.request.DestinationRequestDTO;
 import com.example.touragencyback.dto.response.DestinationResponseDTO;
 import com.example.touragencyback.service.DestinationService;
