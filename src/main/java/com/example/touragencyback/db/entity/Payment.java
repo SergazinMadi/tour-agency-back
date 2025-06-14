@@ -1,5 +1,7 @@
 package com.example.touragencyback.db.entity;
 
+import com.example.touragencyback.enums.PaymentMethod;
+import com.example.touragencyback.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,9 +25,14 @@ public class Payment {
     private LocalDateTime paymentDate;
     private String transactionId;
     private String status;
-    private String paymentMethod;
 
     @OneToOne
     @JoinColumn(name = "booking_id")
     private Booking booking;
+
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
+
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
 }

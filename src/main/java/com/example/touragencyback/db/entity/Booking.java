@@ -1,5 +1,6 @@
 package com.example.touragencyback.db.entity;
 
+import com.example.touragencyback.enums.BookingStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,5 +35,8 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "tour_package_id")
     private TourPackage tourPackage;
+
+    @Enumerated(EnumType.STRING)
+    private BookingStatus bookingStatus;
 
 }
